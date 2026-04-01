@@ -1,0 +1,19 @@
+---
+alwaysApply: true
+---
+# Data Agent Rules
+
+When querying MongoDB or generating reports:
+
+1. Always save query results into a markdown file
+2. The file must be placed in `/reports`
+3. File name format:
+
+reports/<report-name>.md
+
+4. The markdown file must contain:
+
+- Query description
+- MongoDB query used
+- Result data (table or JSON)
+- Summary insights
