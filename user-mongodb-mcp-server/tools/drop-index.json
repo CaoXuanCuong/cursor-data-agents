@@ -1,0 +1,63 @@
+{
+  "name": "drop-index",
+  "description": "Drop an index for the provided database and collection.",
+  "arguments": {
+    "type": "object",
+    "properties": {
+      "database": {
+        "type": "string",
+        "description": "Database name"
+      },
+      "collection": {
+        "type": "string",
+        "description": "Collection name"
+      },
+      "indexName": {
+        "type": "string",
+        "minLength": 1,
+        "description": "The name of the index to be dropped."
+      },
+      "type": {
+        "type": "string",
+        "enum": [
+          "classic",
+          "search"
+        ],
+        "description": "The type of index to be deleted. Use 'classic' for standard indexes and 'search' for atlas search and vector search indexes."
+      }
+    },
+    "required": [
+      "database",
+      "collection",
+      "indexName",
+      "type"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "database": {
+        "type": "string"
+      },
+      "collection": {
+        "type": "string"
+      },
+      "indexName": {
+        "type": "string"
+      },
+      "dropped": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "database",
+      "collection",
+      "indexName",
+      "dropped"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "atlas-local-list-deployments",
+  "description": "List MongoDB Atlas local deployments",
+  "arguments": {
+    "type": "object",
+    "properties": {}
+  }
+}

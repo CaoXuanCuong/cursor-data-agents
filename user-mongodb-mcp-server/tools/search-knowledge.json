@@ -1,0 +1,46 @@
+{
+  "name": "search-knowledge",
+  "description": "Search for information in the MongoDB Assistant knowledge base. This includes official documentation, curated expert guidance, and other resources provided by MongoDB. Supports filtering by data source and version.",
+  "arguments": {
+    "type": "object",
+    "properties": {
+      "query": {
+        "type": "string",
+        "description": "A natural language query to search for in the MongoDB Assistant knowledge base. This should be a single question or a topic that is relevant to the user's MongoDB use case."
+      },
+      "limit": {
+        "type": "number",
+        "minimum": 1,
+        "maximum": 100,
+        "default": 5,
+        "description": "The maximum number of results to return"
+      },
+      "dataSources": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "The name of the data source"
+            },
+            "versionLabel": {
+              "type": "string",
+              "description": "The version label of the data source"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "additionalProperties": false
+        },
+        "description": "A list of one or more data sources to limit the search to. You can specify a specific version of a data source by providing the version label. If not provided, the latest version of all data sources will be searched. Available data sources and their versions can be listed by calling the list-knowledge-sources tool."
+      }
+    },
+    "required": [
+      "query"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+  }
+}

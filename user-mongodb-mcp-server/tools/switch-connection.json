@@ -1,0 +1,15 @@
+{
+  "name": "switch-connection",
+  "description": "Switch to a different MongoDB connection. If the user has configured a connection string or has previously called the connect tool, a connection is already established and there's no need to call this tool unless the user has explicitly requested to switch to a new instance.",
+  "arguments": {
+    "type": "object",
+    "properties": {
+      "connectionString": {
+        "type": "string",
+        "description": "MongoDB connection string to switch to (in the mongodb:// or mongodb+srv:// format). If a connection string is not provided, the connection string from the config will be used."
+      }
+    },
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+  }
+}
